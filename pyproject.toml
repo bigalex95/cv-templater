@@ -1,0 +1,13 @@
+[project]
+name = "cv-templater"
+version = "0.1.0"
+description = "A simple tool to create and convert CV templates from Markdown to PDF, DOCX, or HTML formats using Pandoc"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pypandoc>=1.15",
+    "weasyprint>=65.1",
+]
+
+[tool.uv.workspace]
+members = ["test_cv_templater"]
