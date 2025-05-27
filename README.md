@@ -2,6 +2,33 @@
 
 A simple tool to create and convert CV templates from Markdown to PDF, DOCX, or HTML formats using Pandoc.
 
+## GitHub Pages
+
+This project is available online at: [https://bigalex95.github.io/cv-templater/](https://bigalex95.github.io/cv-templater/)
+
+The GitHub Pages site demonstrates the capabilities of CV Templater and provides:
+
+- Interactive documentation
+- Sample CV templates
+- Quick start guide
+- Feature overview
+
+### Setting Up GitHub Pages for Your Fork
+
+If you fork this repository, you can set up your own GitHub Pages site:
+
+1. Go to your repository's Settings
+2. Navigate to the "Pages" section
+3. Under "Build and deployment", select "GitHub Actions" as the source
+4. The workflow will automatically deploy your site
+
+The GitHub Actions workflow in `.github/workflows/pages.yml` handles:
+
+- Building the site
+- Generating sample CVs
+- Converting them to HTML
+- Deploying everything to GitHub Pages
+
 ## Project Structure
 
 ```
