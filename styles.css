@@ -189,8 +189,10 @@ textarea:focus {
 
 /* Update profile picture styles */
 .profile-picture {
-  width: 120px;
-  height: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  min-width: 80px;
+  min-height: 80px;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.2),

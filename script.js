@@ -506,12 +506,32 @@ function handleProfilePhotoUpload(event) {
 function updateProfilePicture(imageData) {
   const profilePicture = document.querySelector(".profile-picture");
   if (profilePicture) {
-    profilePicture.innerHTML = "";
-    profilePicture.style.backgroundImage = `url(${imageData})`;
-    profilePicture.style.backgroundSize = "contain";
-    profilePicture.style.backgroundPosition = "center";
-    profilePicture.style.backgroundRepeat = "no-repeat";
-    profilePicture.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+    // Create a new image element to get the natural dimensions
+    const img = new Image();
+    img.onload = function () {
+      // Calculate aspect ratio
+      const aspectRatio = img.width / img.height;
+
+      // Adjust container based on image aspect ratio
+      if (aspectRatio > 1) {
+        // Landscape image
+        profilePicture.style.width = "120px";
+        profilePicture.style.height = `${120 / aspectRatio}px`;
+      } else {
+        // Portrait image
+        profilePicture.style.height = "150px";
+        profilePicture.style.width = `${150 * aspectRatio}px`;
+      }
+
+      // Clear any existing content
+      profilePicture.innerHTML = "";
+
+      // Set the image as background
+      profilePicture.style.backgroundImage = `url(${imageData})`;
+      profilePicture.style.backgroundSize = "cover";
+      profilePicture.style.backgroundPosition = "center";
+    };
+    img.src = imageData;
   }
 }
 
