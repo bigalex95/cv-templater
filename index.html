@@ -15,8 +15,9 @@
         <div class="input-section">
             <h2>Markdown Input</h2>
             <div class="photo-upload">
-                <label for="profilePhotoInput">Upload Profile Photo:</label>
+                <label for="profilePhotoInput">Profile Photo:</label>
                 <input type="file" id="profilePhotoInput" accept="image/*" onchange="handleProfilePhotoUpload(event)">
+                <button type="button" id="clearPhotoBtn" class="clear-btn">Clear Photo</button>
             </div>
             <textarea id="markdownInput" placeholder="Enter your CV data in markdown format...">
 # John Doe

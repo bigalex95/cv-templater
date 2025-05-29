@@ -1,3 +1,7 @@
+// Add this at the beginning of your script.js file
+// Uncomment this line if you want to clear the profile photo on every page load
+// localStorage.removeItem('profilePhoto');
+
 let techTagClasses = {}; // Global variable to store tech tag mappings and colors
 
 // Function to fetch tech tag classes and colors from JSON
@@ -247,11 +251,8 @@ async function generateCV() {
 
   // Get profile photo from localStorage if available
   const profilePhoto = localStorage.getItem("profilePhoto");
-  const profilePictureStyle = profilePhoto
-    ? `style="background-image: url('${profilePhoto}'); background-size: cover; background-position: center;"`
-    : "";
-  const profilePictureContent = profilePhoto ? "" : "profile<br>picture";
 
+  // Create header HTML with conditional profile picture
   let html = `
         <div class="cv-header">
             <div class="cv-header-info">
@@ -261,10 +262,15 @@ async function generateCV() {
                   cv.contact ||
                   "contact info and links to github email and linkedin"
                 }</div>
-            </div>
-            <div class="profile-picture" ${profilePictureStyle}>${profilePictureContent}</div>
-        </div>
-    `;
+            </div>`;
+
+  // Only add profile picture if a photo exists
+  if (profilePhoto) {
+    html += `
+            <div class="profile-picture" style="background-image: url('${profilePhoto}'); background-size: cover; background-position: center;"></div>`;
+  }
+
+  html += `</div>`;
 
   // Conditionally render About section
   if (cv.about && cv.about.trim().length > 0) {
@@ -535,7 +541,27 @@ function updateProfilePicture(imageData) {
   }
 }
 
+// Function to clear profile photo
+function clearProfilePhoto() {
+  localStorage.removeItem("profilePhoto");
+
+  // Clear the file input
+  const fileInput = document.getElementById("profilePhotoInput");
+  if (fileInput) {
+    fileInput.value = "";
+  }
+
+  // Regenerate the CV to remove the profile picture container
+  generateCV();
+}
+
 // Generate initial CV when page loads
 document.addEventListener("DOMContentLoaded", async function () {
+  // Check if clear photo button exists and add event listener
+  const clearPhotoBtn = document.getElementById("clearPhotoBtn");
+  if (clearPhotoBtn) {
+    clearPhotoBtn.addEventListener("click", clearProfilePhoto);
+  }
+
   await generateCV();
 });

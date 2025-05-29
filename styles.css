@@ -166,11 +166,27 @@ textarea:focus {
 }
 
 /* Profile photo upload styles */
+.clear-btn {
+  padding: 8px 12px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.clear-btn:hover {
+  background: #c0392b;
+}
+
 .photo-upload {
   margin-bottom: 15px;
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .photo-upload label {
