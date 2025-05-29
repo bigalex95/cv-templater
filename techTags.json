@@ -1,0 +1,56 @@
+{
+  "python": {
+    "className": "python",
+    "backgroundColor": "#3776ab",
+    "textColor": "white",
+    "keywords": ["python", "py"]
+  },
+  "javascript": {
+    "className": "js",
+    "backgroundColor": "#f7df1e",
+    "textColor": "black",
+    "keywords": ["javascript", "js", "ecmascript"]
+  },
+  "opencv": {
+    "className": "opencv",
+    "backgroundColor": "linear-gradient(135deg, #5C3EE8, #FF0000, #00FF00, #0000FF)",
+    "textColor": "white",
+    "keywords": ["opencv"]
+  },
+  "react": {
+    "className": "react",
+    "backgroundColor": "#61dafb",
+    "textColor": "black",
+    "keywords": ["react", "reactjs"]
+  },
+  "node": {
+    "className": "node",
+    "backgroundColor": "#339933",
+    "textColor": "white",
+    "keywords": ["node", "nodejs"]
+  },
+  "docker": {
+    "className": "docker",
+    "backgroundColor": "#2496ed",
+    "textColor": "white",
+    "keywords": ["docker"]
+  },
+  "aws": {
+    "className": "aws",
+    "backgroundColor": "#232F3E",
+    "textColor": "white",
+    "keywords": ["aws", "amazon web services"]
+  },
+  "angular": {
+    "className": "angular",
+    "backgroundColor": "#DD0031",
+    "textColor": "white",
+    "keywords": ["angular", "angularjs"]
+  },
+  "default": {
+    "className": "default",
+    "backgroundColor": "#95a5a6",
+    "textColor": "white",
+    "keywords": ["default"]
+  }
+}

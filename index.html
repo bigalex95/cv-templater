@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Template Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>CV Template Generator</h1>
+
+    <div class="container">
+        <div class="input-section">
+            <h2>Markdown Input</h2>
+            <div class="photo-upload">
+                <label for="profilePhotoInput">Upload Profile Photo:</label>
+                <input type="file" id="profilePhotoInput" accept="image/*" onchange="handleProfilePhotoUpload(event)">
+            </div>
+            <textarea id="markdownInput" placeholder="Enter your CV data in markdown format...">
+# John Doe
+## Senior Software Developer
+### john.doe@email.com | +1-234-567-8900 | github.com/johndoe | linkedin.com/in/johndoe
+
+## About
+Experienced software developer with 5+ years in full-stack development. Passionate about creating efficient, scalable solutions and mentoring junior developers.
+
+## Skills
+- **Programming:** Python, JavaScript, Java, C++
+- **Frameworks:** React, Node.js, Django, Flask
+- **Databases:** PostgreSQL, MongoDB, Redis
+- **Tools:** Docker, Git, AWS, Jenkins
+
+## Work Experience
+
+### Senior Software Developer
+**TechCorp Inc.** | *2022-Present* | *San Francisco, CA*
+
+Led development of microservices architecture serving 1M+ users. Implemented CI/CD pipelines reducing deployment time by 70%. Mentored 3 junior developers.
+
+**Technologies:** Python, React, Docker, AWS
+
+### Software Developer
+**StartupXYZ** | *2020-2022* | *New York, NY*
+
+Developed full-stack web applications using modern JavaScript frameworks. Collaborated with design team to implement responsive UI components.
+
+**Technologies:** JavaScript, Node.js, MongoDB
+
+## Education
+
+### Bachelor of Science in Computer Science
+**State University** | *2016-2020* | *GPA: 3.8*
+            </textarea>
+            <button class="generate-btn" onclick="generateCV()">Generate CV</button>
+        </div>
+
+        <div class="output-section">
+            <h2>CV Preview</h2>
+            <div class="cv-output" id="cvOutput">
+                <!-- CV content will be generated here -->
+            </div>
+            <button class="download-btn" onclick="downloadHTML()">Download HTML</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
