@@ -1,1 +1,0 @@
-A simple tool to create and convert CV templates from Markdown to PDF, DOCX, or HTML formats using Pandoc. Try it online: https://bigalex95.github.io/cv-templater/
